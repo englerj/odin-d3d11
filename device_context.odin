@@ -148,7 +148,7 @@ ia_set_vertex_buffers :: proc(device_context: ^Device_Context, start_slot: u32, 
     device_context.vtbl.ia_set_vertex_buffers(device_context, start_slot, num_buffers, vertex_buffers, strides, offsets)
 }
 
-Map :: proc(device_context: ^Device_Context, resource: rawptr, subresource: u32, map_type: Map_Type, map_flags: Map_Flags, mapped_resource: ^Mapped_Subresource) -> Result {
+map_subresource :: proc(device_context: ^Device_Context, resource: rawptr, subresource: u32, map_type: Map_Type, map_flags: Map_Flags, mapped_resource: ^Mapped_Subresource) -> Result {
     return device_context.vtbl.map_(device_context, resource, subresource, map_type, map_flags, mapped_resource)
 }
 
@@ -188,7 +188,7 @@ rs_set_viewports :: proc(device_context: ^Device_Context, num_viewports: u32, vi
     device_context.vtbl.rs_set_viewports(device_context, num_viewports, viewports)
 }
 
-unmap :: proc(device_context: ^Device_Context, resource: rawptr, subresource: u32) {
+unmap_subresource :: proc(device_context: ^Device_Context, resource: rawptr, subresource: u32) {
     device_context.vtbl.unmap(device_context, resource, subresource)
 }
 

@@ -50,42 +50,42 @@ Device_Vtbl :: struct {
     get_exception_mode                        : rawptr,
 }
 
-ReleaseDevice :: proc(device: ^Device) -> u32 {
+release_device :: proc(device: ^Device) -> u32 {
     return device.vtbl.release(device)
 }
 
-CreateBlendState :: proc(device: ^Device, desc: ^Blend_Desc, blend_state: ^^Blend_State) -> Result {
+create_blend_state :: proc(device: ^Device, desc: ^Blend_Desc, blend_state: ^^Blend_State) -> Result {
     return device.vtbl.create_blend_state(device, desc, blend_state)
 }
 
-CreateBuffer :: proc(device: ^Device, desc: ^Buffer_Desc, initial_data: ^Subresource_Data, buffer: ^^Buffer) -> Result {
+create_buffer :: proc(device: ^Device, desc: ^Buffer_Desc, initial_data: ^Subresource_Data, buffer: ^^Buffer) -> Result {
     return device.vtbl.create_buffer(device, desc, initial_data, buffer)
 }
 
-CreateInputLayout :: proc(device: ^Device, input_element_descs: ^Input_Element_Desc, num_elements: u32, shader_bytecode_with_input_signature: rawptr, bytecode_length: int, input_layout: ^^Input_Layout) -> Result {
+create_input_layout :: proc(device: ^Device, input_element_descs: ^Input_Element_Desc, num_elements: u32, shader_bytecode_with_input_signature: rawptr, bytecode_length: int, input_layout: ^^Input_Layout) -> Result {
     return device.vtbl.create_input_layout(device, input_element_descs, num_elements, shader_bytecode_with_input_signature, bytecode_length, input_layout)
 }
 
-CreatePixelShader :: proc(device: ^Device, shader_bytecode: rawptr, bytecode_length: int, class_linkage: ^Class_Linkage, pixel_shader: ^^Pixel_Shader) -> Result {
+create_pixel_shader :: proc(device: ^Device, shader_bytecode: rawptr, bytecode_length: int, class_linkage: ^Class_Linkage, pixel_shader: ^^Pixel_Shader) -> Result {
     return device.vtbl.create_pixel_shader(device, shader_bytecode, bytecode_length, class_linkage, pixel_shader)
 }
 
-CreateRenderTargetView :: proc(device: ^Device, resource: rawptr, desc: ^Render_Target_View_Desc, rtv: ^^Render_Target_View) -> Result {
+create_render_target_view :: proc(device: ^Device, resource: rawptr, desc: ^Render_Target_View_Desc, rtv: ^^Render_Target_View) -> Result {
     return device.vtbl.create_render_target_view(device, resource, desc, rtv)
 }
 
-CreateSamplerState :: proc(device: ^Device, desc: ^Sampler_Desc, sampler_state: ^^Sampler_State) -> Result {
+create_sampler_state :: proc(device: ^Device, desc: ^Sampler_Desc, sampler_state: ^^Sampler_State) -> Result {
     return device.vtbl.create_sampler_state(device, desc, sampler_state)
 }
 
-CreateShaderResourceView :: proc(device: ^Device, resource: rawptr, desc: ^Shader_Resource_View_Desc, srv: ^^Shader_Resource_View) -> Result {
+create_shader_resource_view :: proc(device: ^Device, resource: rawptr, desc: ^Shader_Resource_View_Desc, srv: ^^Shader_Resource_View) -> Result {
     return device.vtbl.create_shader_resource_view(device, resource, desc, srv)
 }
 
-CreateTexture2D :: proc(device: ^Device, desc: ^Texture_2D_Desc, initial_data: ^Subresource_Data, texture_2d: ^^Texture_2D) -> Result {
+create_texture_2d :: proc(device: ^Device, desc: ^Texture_2D_Desc, initial_data: ^Subresource_Data, texture_2d: ^^Texture_2D) -> Result {
     return device.vtbl.create_texture_2d(device, desc, initial_data, texture_2d)
 }
 
-CreateVertexShader :: proc(device: ^Device, shader_bytecode: rawptr, bytecode_length: int, class_linkage: ^Class_Linkage, vertex_shader: ^^Vertex_Shader) -> Result {
+create_vertex_shader :: proc(device: ^Device, shader_bytecode: rawptr, bytecode_length: int, class_linkage: ^Class_Linkage, vertex_shader: ^^Vertex_Shader) -> Result {
     return device.vtbl.create_vertex_shader(device, shader_bytecode, bytecode_length, class_linkage, vertex_shader)
 }

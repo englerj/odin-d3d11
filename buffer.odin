@@ -28,7 +28,7 @@ Buffer_Vtbl :: struct
     get_desc                   : rawptr,
 }
 
-ReleaseBuffer :: proc(buffer: ^Buffer) -> u32
+release_buffer :: proc(buffer: ^Buffer) -> u32
 {
     return buffer.vtbl.release(buffer)
 }
