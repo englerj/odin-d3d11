@@ -86,6 +86,6 @@ Sampler_State_Vtbl :: struct {
     get_desc                   : rawptr,
 }
 
-release_sampler_state :: proc(sampler_state: ^Sampler_State) {
-    sampler_state.vtbl.release(sampler_state)
+release_sampler_state :: proc(sampler_state: ^Sampler_State) -> u32 {
+    return sampler_state.vtbl.release(sampler_state)
 }
