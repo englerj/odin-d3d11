@@ -1,7 +1,7 @@
 # odin-d3d11
 [Odin](https://github.com/odin-lang/Odin) bindings for Direct3D 11.
 
-_**Note:** This project is very much a work in progress._
+_**Important:** This project has been superseded by [Odin's directx vendor collection](https://github.com/odin-lang/Odin/tree/master/vendor/directx)._
 
 ## Prerequisites
 - Windows 10 SDK
